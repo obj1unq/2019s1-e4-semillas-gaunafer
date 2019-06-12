@@ -1,0 +1,29 @@
+import Plantas.*
+test "crear planta" {
+	var planta = new Planta(2,2019)
+	assert.that(planta.alturaDeLaPlanta() == 2)
+
+}
+test "Menta Horas de Sol que soporta" {
+	var planta = new Menta(2,2019)
+	assert.notThat(planta.esFuerte())
+	
+
+}
+test "una menta de 1 metro, debería dar semillas y ocupar un espacio de 3 metros cuadrados." {
+	var menta = new Menta(1,2019)
+	assert.that(menta.daSemillas())
+	assert.that(menta.espacioQueOcupa() == 3)
+}
+
+test "soja de 0.6 metros y de semilla de 2009, la planta tendría una tolerancia al sol de 7 horas, no daría semillas y ocuparía 0.3 m2" {
+	var soja = new Soja(0.6,2009)
+	assert.that(soja.horasDeSolToleradas() == 7)
+	assert.notThat(soja.daSemillas())
+	assert.that(soja.horasDeSolToleradas() == 7)
+	assert.that(soja.espacioQueOcupa()== 0.3)
+}
+	
+	
+	
+	
